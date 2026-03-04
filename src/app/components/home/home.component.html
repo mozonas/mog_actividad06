@@ -1,8 +1,15 @@
-<p>home works!</p>
+<h2>Listado de usuarios</h2>
 
-<div *ngFor="let user of users">
-  <button [routerLink]="['/user', user.id]">Ver detalle</button>
-  <button [routerLink]="['/updateuser', user.id]">Actualizar</button>
-  <button [routerLink]="['/newuser']">Nuevo usuario</button>
-</div>
+@for (user of users; track user.id) {
+  <div style="margin-bottom: 20px;">
+    <img [src]="user.image" alt="Foto de {{ user.first_name }}" width="80" style="border-radius: 8px;">
+    <p><strong>{{ user.first_name }} {{ user.last_name }}</strong></p>
+    <p>{{ user.email }}</p>
 
+    <button [routerLink]="['/user', user.id]">Ver detalle</button>
+    <button [routerLink]="['/updateuser', user.id]">Actualizar</button>
+    <button [routerLink]="['/newuser']">Nuevo usuario</button>
+
+    <hr>
+  </div>
+}
