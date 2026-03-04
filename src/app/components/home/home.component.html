@@ -1,1 +1,8 @@
 <p>home works!</p>
+
+<div *ngFor="let user of users">
+  <button [routerLink]="['/user', user.id]">Ver detalle</button>
+  <button [routerLink]="['/updateuser', user.id]">Actualizar</button>
+  <button [routerLink]="['/newuser']">Nuevo usuario</button>
+</div>
+
